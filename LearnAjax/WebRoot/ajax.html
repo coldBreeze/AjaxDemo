@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ajax.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=gbk">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+ <script type="text/javascript">
+ 		//get方式提交
+	  	function ajaxtest(){
+		  	//1.创建ajax的引擎对象
+		  	var xmlhttp=new XMLHttpRequest();
+		  	//2.绑定监听
+		  	xmlhttp.onreadystatechange=function(){
+		  		//5.接受响应的数据
+		  		if(xmlhttp.readyState==4&&xmlhttp.status==200)
+		  			{
+		  				var res=xmlhttp.responseText;
+		  				alert(res);
+		  			}
+		  	}
+		  	//3.绑定地址
+		  	xmlhttp.open("GET", "/LearnAjax/ajax", true);
+		  	//4.发送请求
+		  	xmlhttp.send();
+	  	}
+ 	
+ 		
+  </script>
+  </head>
+
+  <body>
+   <input type="button" onclick="ajaxtest()" value="put提交"/>
+  </body>
+</html>
